@@ -37,8 +37,9 @@
   }
 }
 
-.container{
+.side-by-side{
   display: flex;
   flex-direction: row;
-  font-size: 50px;
+  margin: auto;
+  justify-content: space-evenly;
 }
