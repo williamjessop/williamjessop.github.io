@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card"
 class Home extends React.Component {
     render() {
         return (
-            <div className='side-by-side' >
+            <div className="side-by-side" >
                 <Card style={{ width: '18rem' }}>
                     <Card.Body>
                         <Card.Title>Want to See Some Projects?</Card.Title>
