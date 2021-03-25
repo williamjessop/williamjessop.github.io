@@ -18,7 +18,7 @@ class Game extends React.Component {
             guesses: []
         };
 
-        this.checkWin = this.checkwin.bind(this);
+        this.checkWin = this.checkWin.bind(this);
     }
 
     checkWin(word, guessedChars) {
