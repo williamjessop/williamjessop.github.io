@@ -5,6 +5,8 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 //import pic from "./img/hangmen.png"
+import Form from "react-bootstrap/Form"
+import Button from "react-bootstrap/Button"
 
 class Game extends React.Component {
 
@@ -61,6 +63,15 @@ class Game extends React.Component {
                                     </Col>
                                     
                                 </Row>
+                                <br/>
+                                
+                                <Form style={{display: "flex"}}>
+                                    <Form.Group>
+                                        <Form.Control type="text" placeholder="Put Your Guess Here" />
+                                    </Form.Group>
+                                    <Button type="submit" style={{height:"70%"}}>Check!</Button>
+                                </Form>
+
                             </Container>
                             
                         </Card.Body>
