@@ -47,20 +47,19 @@ class Game extends React.Component {
                         <Card.Title>Welcome to Hangman!</Card.Title>
                         <Card.Body>
                             <Container>
-                                <Image src={pic} alt="Some text"/>
-                                
-                                
-                                    <p>This is where the word goes</p>
-                                
                                 <Row>
                                     <Col>
-                                        <div style={{color:"green"}}>Here I will track the Correct Letters</div>
+                                        <Image src={pic} alt="Some text"/>
+                                        
+                                        <br/>
+                                        <p>_ E _ _</p>
                                     </Col>
                                     <Col>
-                                        <div style={{color:"red"}}>Here I will track the strikes</div>
+                                        <div style={{color:"red"}}>Incorrect:</div>
+                                        <div style={{color:"red"}}>Z X C V</div>
                                     </Col>
-                                    
                                 </Row>
+                                
                                 <br/>
                                 
                                 <Form style={{display: "flex"}}>
