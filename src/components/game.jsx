@@ -1,10 +1,10 @@
 import React from "react";
 import Card from "react-bootstrap/Card"
-//import Image from "react-bootstrap/Image"
+import Image from "react-bootstrap/Image"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-//import pic from "./img/hangmen.png"
+import pic from "./img/hangman_3.png"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 
@@ -39,8 +39,6 @@ class Game extends React.Component {
     }  
 
 
-//<Image src={pic} alt="Some text"/>
-
     render() {
         return (
             <div className="side-by-side" >
@@ -49,7 +47,7 @@ class Game extends React.Component {
                         <Card.Title>Welcome to Hangman!</Card.Title>
                         <Card.Body>
                             <Container>
-                                    <p>There will be an image here</p>
+                                <Image src={pic} alt="Some text"/>
                                 
                                 
                                     <p>This is where the word goes</p>
