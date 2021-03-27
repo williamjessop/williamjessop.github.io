@@ -6,26 +6,28 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
-const fs = require('fs');
 
+const startState = {
+    strikes: 0,
+    screenWord: "",
+    screenMisses: "",
+    word: "test",
+    win: false,
+    guessedChars: [],
+    missedChars: [],
+    guess: "",
+    pic: require('./img/hangman_0.png').default
+}
 class Game extends React.Component {
+    
 
     constructor(props) {
         super(props);
-        this.state = {
-            strikes: 0,
-            screenWord: "",
-            screenMisses: "",
-            word: "test",
-            win: false,
-            guessedChars: [],
-            missedChars: [],
-            guess: "",
-            pic: require('./img/hangman_0.png').default
-        };
+        this.state = startState;
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     checkWin() {
@@ -47,6 +49,10 @@ class Game extends React.Component {
 
             return {win: true}
         });
+    }
+
+    pickWord(){
+
     }
 
     updateStrikes() {
@@ -97,29 +103,13 @@ class Game extends React.Component {
         }
         this.checkWin();
     }
-    
-    
-    readWordsFromFile() {
-        try {
-            var data = fs.readFileSync('./words.txt', 'utf8')
-            data = data.split('\n');
-            return data;
-        } catch (err) {
-            console.error(err)
-        }
-    }
-    
-
-    componentDidMount(){
-        this.updateScreenString();
-    }
 
     handleChange(event){
         this.setState({guess: event.target.value});
     }
 
     handleSubmit(event){
-        if(this.state.guess.length !== 1){
+        if(this.state.guess.length !== 1 && this.state.guess.match(/[a-z]/i)){
             alert("Please enter only 1 letter");
         }else{
             if(this.state.missedChars.includes(this.state.guess))
@@ -135,11 +125,19 @@ class Game extends React.Component {
         this.setState({guess: ''});
     }
 
+    handleReset(){
+        this.setState(startState);
+        this.updateScreenString();
+    }
+
+    componentDidMount(){
+        this.updateScreenString();
+    }
+
     render() {
         return (
             <div className="side-by-side" >
                 <Card style={{ width: '30%'}}>
-                    
                     <Card.Title>Welcome to Hangman!</Card.Title>
                     <Card.Body>
                         <Container>
@@ -156,7 +154,7 @@ class Game extends React.Component {
                                     <div style={{color:"red"}}>Incorrect:</div>
                                     <div style={{color:"red"}}>{this.state.missedChars.join(' ')}</div>
                                     
-                                    <Button type="submit">Reset</Button>
+                                    <Button type="submit" onClick={this.handleReset}>Reset</Button>
                                     
                                 </Col>
                             </Row>
@@ -170,12 +168,8 @@ class Game extends React.Component {
                                 </Form.Group>
                                 <Button type="submit" style={{height:"70%"}}>Check!</Button>
                             </Form>
-
-                            
                         </Container>
-                        
-                    </Card.Body>
-                    
+                    </Card.Body> 
                 </Card>
             </div>
         );
