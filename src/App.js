@@ -4,7 +4,6 @@ import Home from './components/home'
 import Projects from './components/projects'
 
 import {
-  HashRouter as Router,
   Switch,
   Route
 } from "react-router-dom";

@@ -30,28 +30,24 @@ class Game extends React.Component {
         this.handleReset = this.handleReset.bind(this);
     }
 
+    pickWord(){this.setState({word: [...words[Math.floor(Math.random() * words.length)]]})}
+
     checkWin() {
         this.setState((state)=>{
             //this is a quick way to eliminate duplicates in an array. I am using a set to eat identical keys
             let checkWord = [...new Set(state.word)];
         
-            //if (checkWord.length !== this.state.guessedChars.length) return;
-        
             checkWord.sort();
             let checkGuess = state.guessedChars.sort()
             
             console.log("hit")
-            for(let i = 0; i < checkWord.length; i++){
-                
+            for(let i = 0; i < checkWord.length; i++)
                 if (checkWord[i] !== checkGuess[i])
                     return
-            }
-
+            
             return {win: true, inputOn: false}
         });
     }
-
-    pickWord(){this.setState({word: [...words[Math.floor(Math.random() * words.length)]]})}
 
     updateStrikes() {
         this.setState((state) => {
@@ -139,12 +135,10 @@ class Game extends React.Component {
         this.updateScreenString();
     }
 
-    
-
     render() {
         return (
-            <div className="side-by-side" >
-                <Card style={{ width: '30%'}}>
+            <div style={{...this.props.styles}}>
+                <Card>
                     <Card.Title>Welcome to Hangman!</Card.Title>
                     <Card.Body>
                         <Container>
@@ -157,7 +151,6 @@ class Game extends React.Component {
                                     <p>{this.state.screenWord}</p>
                                 </Col>
                                 <Col>
-                                    
                                     <div style={{color:"red"}}>Incorrect:</div>
                                     <div style={{color:"red"}}>{this.state.missedChars.join(' ')}</div>
                                     
@@ -165,7 +158,6 @@ class Game extends React.Component {
                                     
                                 </Col>
                             </Row>
-                            
                             <br/>
                             {this.state.win && <h1 style={{color:"green"}}>YOU WIN!</h1>}
                             {!(this.state.strikes < 6) && <h1 style={{color:"red"}}>YOU LOSE!</h1>}
