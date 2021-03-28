@@ -10,9 +10,9 @@ class Navigation extends React.Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse>
                         <Nav className="mr-auto">
-                            <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/about/">Link</Nav.Link>
-                            <Nav.Link href="/projects/">Projects</Nav.Link>
+                            <Nav.Link href="/#/">Home</Nav.Link>
+                            <Nav.Link href="/#/about">Link</Nav.Link>
+                            <Nav.Link href="/#/projects">Projects</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                     
