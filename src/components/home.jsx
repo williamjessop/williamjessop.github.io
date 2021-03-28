@@ -11,7 +11,7 @@ class Home extends React.Component {
                         <Card.Text>
                             Here you can see some of the works I have spent time on as a developer. Think of it as my portfolio.
                         </Card.Text>
-                        <Card.Link href="/projects">Let's Go!</Card.Link>
+                        <Card.Link href="/#/projects">Let's Go!</Card.Link>
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }}>
@@ -20,7 +20,7 @@ class Home extends React.Component {
                         <Card.Text>
                             Here you can see some of the works I have spent time on as a developer. Think of it as my portfolio.
                         </Card.Text>
-                        <Card.Link href="/projects">Let's Go!</Card.Link>
+                        <Card.Link href="/#/projects">Let's Go!</Card.Link>
                     </Card.Body>
                 </Card>
             </div>
