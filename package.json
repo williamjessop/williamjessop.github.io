@@ -1,6 +1,6 @@
 {
-  "homepage": "react-project",
-  "name": "react-project",
+  "homepage": "./",
+  "name": "williamjessop.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
