@@ -13,16 +13,16 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div>
           <Switch>
             <Route exact path="/">
               <Home/>
             </Route>
-            <Route path="/about">
+            <Route exact path="/about">
               <p>about</p>
             </Route>
-            <Route path="/projects">
+            <Route exact path="/projects">
               <Projects/>
             </Route>
           </Switch>
