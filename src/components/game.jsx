@@ -6,21 +6,21 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
+import {words} from "./words.json"
 
 const startState = {
     strikes: 0,
     screenWord: "",
     screenMisses: "",
-    word: "test",
+    word: "",
     win: false,
     guessedChars: [],
     missedChars: [],
     guess: "",
-    pic: require('./img/hangman_0.png').default
+    pic: require('./img/hangman_0.png').default,
+    inputOn: true
 }
 class Game extends React.Component {
-    
-
     constructor(props) {
         super(props);
         this.state = startState;
@@ -47,13 +47,11 @@ class Game extends React.Component {
                     return
             }
 
-            return {win: true}
+            return {win: true, inputOn: false}
         });
     }
 
-    pickWord(){
-
-    }
+    pickWord(){this.setState({word: [...words[Math.floor(Math.random() * words.length)]]})}
 
     updateStrikes() {
         this.setState((state) => {
@@ -93,13 +91,18 @@ class Game extends React.Component {
             this.updateScreenString();
         }else{
             this.setState((state) => {
-                var joined = state.missedChars.concat([state.guess]);
-
-                return {
-                    missedChars: joined 
+                if(state.strikes < 5){
+                    var joined = state.missedChars.concat([state.guess]);
+                    return {
+                        missedChars: joined 
+                    }
+                }else{
+                    return {
+                        inputOn: false
+                    }
                 }
             });
-            this.updateStrikes();
+            this.updateStrikes(); 
         }
         this.checkWin();
     }
@@ -127,12 +130,16 @@ class Game extends React.Component {
 
     handleReset(){
         this.setState(startState);
+        this.pickWord();
         this.updateScreenString();
     }
 
     componentDidMount(){
+        this.pickWord();
         this.updateScreenString();
     }
+
+    
 
     render() {
         return (
@@ -164,9 +171,15 @@ class Game extends React.Component {
                             {!(this.state.strikes < 6) && <h1 style={{color:"red"}}>YOU LOSE!</h1>}
                             <Form style={{display: "flex"}} onSubmit={this.handleSubmit}>
                                 <Form.Group>
-                                    <Form.Control type="text" placeholder="Put Your Guess Here" onChange={this.handleChange} value={this.state.guess}/>
+                                    <Form.Control 
+                                        type="text" 
+                                        placeholder="Put Your Guess Here" 
+                                        onChange={this.handleChange} 
+                                        value={this.state.guess}
+                                        disabled={!this.state.inputOn}
+                                    />
                                 </Form.Group>
-                                <Button type="submit" style={{height:"70%"}}>Check!</Button>
+                                <Button type="submit" style={{height:"70%"}} disabled={!this.state.inputOn}>Check!</Button>
                             </Form>
                         </Container>
                     </Card.Body> 
