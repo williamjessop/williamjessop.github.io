@@ -1,0 +1,31 @@
+import './App.css';
+import Navigation from './components/navigation'
+import Home from './components/home'
+import Projects from './components/projects'
+
+import {
+  HashRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+function App() {
+  return (
+    <div className="App">
+      <Navigation/>
+      <Switch>
+        <Route exact path="/">
+          <Home/>
+        </Route>
+        <Route path="/about">
+          <p>about</p>
+        </Route>
+        <Route path="/projects">
+          <Projects/>
+        </Route>
+      </Switch>
+    </div>
+  );
+}
+
+export default App;
