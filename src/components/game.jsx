@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col"
 import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 import {words} from "./words.json"
+import Rules from "./Rules"
 
 const startState = {
     strikes: 0,
@@ -39,8 +40,7 @@ class Game extends React.Component {
         
             checkWord.sort();
             let checkGuess = state.guessedChars.sort()
-            
-            console.log("hit")
+
             for(let i = 0; i < checkWord.length; i++)
                 if (checkWord[i] !== checkGuess[i])
                     return
@@ -138,7 +138,7 @@ class Game extends React.Component {
     render() {
         return (
             <div style={{...this.props.styles}}>
-                <Card>
+                <Card style={{ width: '20rem' }}>
                     <Card.Title>Welcome to Hangman!</Card.Title>
                     <Card.Body>
                         <Container>
@@ -153,9 +153,6 @@ class Game extends React.Component {
                                 <Col>
                                     <div style={{color:"red"}}>Incorrect:</div>
                                     <div style={{color:"red"}}>{this.state.missedChars.join(' ')}</div>
-                                    
-                                    <Button type="submit" onClick={this.handleReset}>Reset</Button>
-                                    
                                 </Col>
                             </Row>
                             <br/>
@@ -173,8 +170,15 @@ class Game extends React.Component {
                                 </Form.Group>
                                 <Button type="submit" style={{height:"70%"}} disabled={!this.state.inputOn}>Check!</Button>
                             </Form>
+                            <Button variant="danger" type="submit" onClick={this.handleReset}>Reset</Button>
                         </Container>
-                    </Card.Body> 
+                    </Card.Body>
+                    <Row>
+                        <Col>
+                            <Rules/>
+                        </Col>
+                    </Row>
+                    
                 </Card>
             </div>
         );
