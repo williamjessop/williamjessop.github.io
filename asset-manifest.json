@@ -1,30 +1,31 @@
 {
   "files": {
     "main.css": "./static/css/main.99482d35.chunk.css",
-    "main.js": "./static/js/main.8bb6683d.chunk.js",
-    "main.js.map": "./static/js/main.8bb6683d.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.ce135f0a.js",
-    "runtime-main.js.map": "./static/js/runtime-main.ce135f0a.js.map",
+    "main.js": "./static/js/main.ac00fe5c.chunk.js",
+    "main.js.map": "./static/js/main.ac00fe5c.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.11994afd.js",
+    "runtime-main.js.map": "./static/js/runtime-main.11994afd.js.map",
     "static/css/2.4c97ca4f.chunk.css": "./static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.9ccac64c.chunk.js": "./static/js/2.9ccac64c.chunk.js",
-    "static/js/2.9ccac64c.chunk.js.map": "./static/js/2.9ccac64c.chunk.js.map",
-    "static/js/3.9c746e0c.chunk.js": "./static/js/3.9c746e0c.chunk.js",
-    "static/js/3.9c746e0c.chunk.js.map": "./static/js/3.9c746e0c.chunk.js.map",
+    "static/js/2.82429965.chunk.js": "./static/js/2.82429965.chunk.js",
+    "static/js/2.82429965.chunk.js.map": "./static/js/2.82429965.chunk.js.map",
+    "static/js/3.0a36cc82.chunk.js": "./static/js/3.0a36cc82.chunk.js",
+    "static/js/3.0a36cc82.chunk.js.map": "./static/js/3.0a36cc82.chunk.js.map",
     "index.html": "./index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "./static/css/2.4c97ca4f.chunk.css.map",
     "static/css/main.99482d35.chunk.css.map": "./static/css/main.99482d35.chunk.css.map",
-    "static/js/2.9ccac64c.chunk.js.LICENSE.txt": "./static/js/2.9ccac64c.chunk.js.LICENSE.txt",
+    "static/js/2.82429965.chunk.js.LICENSE.txt": "./static/js/2.82429965.chunk.js.LICENSE.txt",
     "static/media/hangman_3.png": "./static/media/hangman_3.eaa62645.png",
     "static/media/hangman_4.png": "./static/media/hangman_4.fadd0e60.png",
     "static/media/hangman_5.png": "./static/media/hangman_5.b43436d2.png",
     "static/media/hangman_6.png": "./static/media/hangman_6.d769d7c6.png",
-    "static/media/hangman_base.png": "./static/media/hangman_base.10433002.png"
+    "static/media/hangman_base.png": "./static/media/hangman_base.10433002.png",
+    "static/media/me.jpg": "./static/media/me.6ec5be5b.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ce135f0a.js",
+    "static/js/runtime-main.11994afd.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.9ccac64c.chunk.js",
+    "static/js/2.82429965.chunk.js",
     "static/css/main.99482d35.chunk.css",
-    "static/js/main.8bb6683d.chunk.js"
+    "static/js/main.ac00fe5c.chunk.js"
   ]
 }
