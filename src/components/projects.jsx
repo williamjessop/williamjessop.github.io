@@ -1,5 +1,5 @@
 import React from "react";
-import Game from "./game";
+import Game from "./Game";
 import Header from "./Header";
 class Projects extends React.Component {
     render() {

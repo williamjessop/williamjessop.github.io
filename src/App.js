@@ -1,7 +1,7 @@
 import './App.css';
-import Navigation from './components/navigation'
-import Home from './components/home'
-import Projects from './components/projects'
+import Navigation from './components/Navigation'
+import Home from './components/Home'
+import Projects from './components/Projects'
 import About from './components/About'
 
 import {
