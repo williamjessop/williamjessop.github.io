@@ -18,5 +18,5 @@ function HomeRow(props) {
     </Row>
   );
 }
-  
+   
 export default HomeRow;
