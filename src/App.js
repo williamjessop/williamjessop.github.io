@@ -2,6 +2,7 @@ import './App.css';
 import Navigation from './components/navigation'
 import Home from './components/home'
 import Projects from './components/projects'
+import About from './components/About'
 
 import {
   Switch,
@@ -17,7 +18,7 @@ function App() {
           <Home/>
         </Route>
         <Route exact path='/about'>
-          <p>about</p>
+          <About/>
         </Route>
         <Route exact path='/projects'>
           <Projects/>
