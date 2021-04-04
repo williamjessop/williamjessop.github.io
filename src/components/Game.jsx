@@ -21,6 +21,7 @@ const startState = {
     pic: require('./img/hangman_0.png').default,
     inputOn: true
 }
+
 class Game extends React.Component {
     constructor(props) {
         super(props);
