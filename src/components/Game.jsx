@@ -77,9 +77,9 @@ class Game extends React.Component {
     }
 
     updateGuesses(){
-        if(this.state.word.includes(this.state.guess)){
+        if(this.state.word.includes(this.state.guess.toLowerCase())){
             this.setState((state) => {
-                var joined = state.guessedChars.concat([state.guess]);
+                var joined = state.guessedChars.concat([state.guess.toLowerCase()]);
 
                 return {
                     guessedChars: joined 
@@ -89,7 +89,7 @@ class Game extends React.Component {
         }else{
             this.setState((state) => {
                 if(state.strikes < 5){
-                    var joined = state.missedChars.concat([state.guess]);
+                    var joined = state.missedChars.concat([state.guess.toLowerCase()]);
                     return {
                         missedChars: joined 
                     }
@@ -109,12 +109,13 @@ class Game extends React.Component {
     }
 
     handleSubmit(event){
-        if(this.state.guess.length !== 1 && this.state.guess.match(/[a-z]/i)){
+        this.setState((state) => {state.guess = state.guess.toLowerCase();});
+        if(this.state.guess.length !== 1 && this.state.guess.toLowerCase().match(/[a-z]/i)){
             alert("Please enter only 1 letter");
         }else{
-            if(this.state.missedChars.includes(this.state.guess))
+            if(this.state.missedChars.includes(this.state.guess.toLowerCase()))
                 alert("Please enter a different guess");
-            else if(this.state.guessedChars.includes(this.state.guess))
+            else if(this.state.guessedChars.includes(this.state.guess.toLowerCase()))
                 alert("Please enter a different guess");
             else if(!this.state.win)
                 this.updateGuesses();

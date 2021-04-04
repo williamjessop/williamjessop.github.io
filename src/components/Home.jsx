@@ -16,7 +16,7 @@ class Home extends React.Component {
                         title="My Education"
                         cardTitle="Colorado Mesa University"
                         cardBody={`I am getting my education at Colorado Mesa University. 
-                                   I am persuing a bacholors Degree in Computer 
+                                   I am pursuing a Bachelor's Degree in Computer 
                                    Science and will graduate Spring of 2023`}
                         cardLink="https://www.coloradomesa.edu/computer-science/index.html"
                         cardLinkText="Read About CMU CS Here!"
